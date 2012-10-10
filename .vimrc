@@ -1,0 +1,139 @@
+"helptags ~/.vim/doc
+
+set incsearch
+set ignorecase
+set number
+set smartindent
+set cinoptions=:0,p0,t0
+set cinwords=if,else,while,do,for,switch,case,def,class,begin
+set cindent
+set autoindent
+"set paste - causes auto indent to not work!
+"folding settings
+"set foldmethod=indent   "fold based on indent
+"set foldnestmax=10      "deepest fold is 10 levels
+""set nofoldenable        "dont fold by default
+"set foldlevel=1         "this is just what i use
+
+"because spelling is important to me
+set spell spelllang=en
+" zg to add word to word list
+" " zw to reverse
+" " zug to remove word from word list
+" " z= to get list of possibilities
+set spellfile=~/.vim/spellfile.add
+set nospell
+
+set nocompatible
+syntax on
+filetype off
+filetype plugin indent on
+set encoding=utf-8
+set ruler
+set number
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
+set wrap
+set autoread
+set incsearch
+set modifiable
+" Normal behaviour of backspace key
+set backspace=indent,eol,start
+let mapleader = ","
+
+" Set terminal to 256 colors
+set t_Co=256
+" Textmate scheme colors clone
+set background=dark
+colorscheme railscasts
+"syntax enable
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
+"Override theme's spell local
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
+
+" don't keep backup after close
+set nobackup
+" do keep a backup while working
+set writebackup
+" Store temporary files in a central spot
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" Set tag files
+set tags=tags,./tags,tmp/tags,./tmp/tags
+
+" Additional Ruby Syntax Highlighting
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+" RDOC Syntax Highlighting
+autocmd BufRead,BufNewFile *.rd,*.rdoc set filetype=rdoc
+
+set ls=2 " Always show status line
+set statusline=%F%m%r%h%w\ (%{&ff})[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+map <C-3> :tabn<CR>
+map <C-1> :tabnew<CR>
+map <C-2> :tabp<CR>
+" map <F7> :w\|:!pdflatex thesis.tex<CR><CR>
+"
+
+"No more arrow keys for me
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+" open vim in NERDTree if there's no file
+"function! StartUp()
+"  if 0 == argc()
+"    :NERDTree
+"  end
+"endfunction
+
+"autocmd VimEnter * call StartUp()
+
+call pathogen#infect()
+
+
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(values(buffer_numbers))
+endfunction
+
+function! Smart_TabComplete()
+  let line = getline('.')                         " current line
+
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+                                                  " line to one character right
+                                                  " of the cursor
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  if (strlen(substr)==0)                          " nothing to match on empty string
+    return "\<tab>"
+  endif
+  let has_period = match(substr, '\.') != -1      " position of period, if any
+  let has_slash = match(substr, '\/') != -1       " position of slash, if any
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"                         " existing text matching
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"                         " file matching
+  else
+    return "\<C-X>\<C-O>"                         " plugin matching
+  endif
+endfunction
+
+"inoremap <tab> <c-r>=Smart_TabComplete()<CR>

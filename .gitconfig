@@ -42,8 +42,3 @@
   default = tracking
 [help]
   format = web
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[mergetool "sourcetree"]
-  trustExitCode = true

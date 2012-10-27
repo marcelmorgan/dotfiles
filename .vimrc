@@ -1,8 +1,11 @@
+set nocompatible
 "helptags ~/.vim/doc
+
+" https://github.com/skwp/dotfiles/blob/master/vimrc
 
 set incsearch
 set ignorecase
-set number
+" set number
 set smartindent
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case,def,class,begin
@@ -24,13 +27,13 @@ set spell spelllang=en
 set spellfile=~/.vim/spellfile.add
 set nospell
 
-set nocompatible
+set title
 syntax on
 filetype off
 filetype plugin indent on
 set encoding=utf-8
 set ruler
-set number
+" set number
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -58,14 +61,38 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 " don't keep backup after close
+" set nobackup
+" " do keep a backup while working
+" set writebackup
+" " Store temporary files in a central spot
+" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" " Set tag files
+" set tags=tags,./tags,tmp/tags,./tmp/tags
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
 set nobackup
-" do keep a backup while working
-set writebackup
-" Store temporary files in a central spot
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" Set tag files
-set tags=tags,./tags,tmp/tags,./tmp/tags
+set nowb
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+" Display tabs and trailing spaces visually
+"
+set list listchars=tab:\ \ ,trail:·
+
+set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
 
 " Additional Ruby Syntax Highlighting
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby

@@ -1,6 +1,6 @@
 [user]
-	name = Marcel Morgan
-	email = marcel.morgan@codedry.com
+  name = Marcel Morgan
+  email = marcel.morgan@codedry.com
 [color]
   ui = auto
 [color "branch"]
@@ -17,7 +17,6 @@
   changed = green
   untracked = cyan
 [alias]
-  # most oftenly used...
   a = add
   s = status
   c = commit -v
@@ -26,38 +25,25 @@
   r = rebase
   p = push
   f = fetch
-	d = diff --color-words -w
+  d = diff --color-words -w
   l = log -p
   co = checkout
-
-	sl = shortlog -sn
-	sh = show --color-words
-  lg = log -p
-	ll  = log --oneline --decorate --graph
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  ls = ls-files
   fix = commit --amend -C HEAD
-  unstage = reset HEAD
-  timeline = log --graph --branches --pretty=oneline --decorate --abbrev-commit
-  untracked-files = ls-files -o --exclude-standard
-  ignored-files = ls-files --others -i --exclude-standard
-  modified-files = ls-files -m
-
+  ls = ls-files
+  sl = shortlog -sn
 [core]
-	editor = vim
-	excludesfile = /Users/marcel/.gitignore
+  editor = vim
+  excludesfile = /Users/marcel/.gitignore
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [branch "master"]
   mergeoptions = --no-commit --ff-only
 [push]
-	default = tracking
+  default = tracking
 [help]
-	format = web
+  format = web
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  trustExitCode = true

@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/marcel/Code/archive/retort/lib/retort'
+let g:netrw_dirhist_2='/Users/marcel/Code/dominoj/server/config/deploy'
+let g:netrw_dirhist_3='/Users/marcel/Code/dart/app/models'

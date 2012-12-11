@@ -29,6 +29,8 @@
   l = log -p
   co = checkout
   fix = commit --amend -C HEAD
+  pair = commit --amend --author "Marcel & Marlon <developers@codedry.com>"
+  rs = remote show
   ls = ls-files
   sl = shortlog -sn
 [core]

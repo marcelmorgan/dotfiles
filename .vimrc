@@ -91,7 +91,7 @@ set undofile
 "
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap       "Don't wrap lines
+" set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " Additional Ruby Syntax Highlighting

@@ -44,6 +44,8 @@ alias vi='vim'
 alias r='rails'
 alias g='git'
 alias c='cap'
+alias b='bundle'
 alias rt='r s -d; tail -f log/development.log'
 alias rss='kill -9 $(cat tmp/pids/server.pid)'
+alias tm='tmux new-session -s'
 tmux="TERM=screen-256color-bce tmux"

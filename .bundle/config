@@ -1,3 +1,4 @@
 ---
 BUNDLE_LOCAL__DOMINO_ENGINE: /Users/marcel/Code/dominoj/engine
 BUNDLE_LOCAL__RETORT: /Users/marcel/Code/archive/retort
+BUNDLE_LOCAL__DJ_CORE: /Users/marcel/Code/dominoj/dj_core

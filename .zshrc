@@ -33,6 +33,8 @@ plugins=(git bundler brew gem)
 
 source $ZSH/oh-my-zsh.sh
 
+export TERM="xterm-256color"
+
 # Customize to your needs...
 
 # some more ls aliases
@@ -41,11 +43,12 @@ alias la='ls -A'
 alias l='ls -CF'
 alias vi='vim'
 
+alias tmux="TERM=screen-256color-bce tmux"
 alias r='rails'
 alias g='git'
 alias c='cap'
 alias b='bundle'
+alias z='zeus'
 alias rt='r s -d; tail -f log/development.log'
 alias rss='kill -9 $(cat tmp/pids/server.pid)'
-alias tm='tmux new-session -s'
-tmux="TERM=screen-256color-bce tmux"
+alias tm='tmux -2 new-session -s'

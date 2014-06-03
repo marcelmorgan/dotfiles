@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/marcel/.dotify/.vim'
-let g:netrw_dirhist_2='/Users/marcel/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/bundler/gems/active_admin-2e8776bcce86'
-let g:netrw_dirhist_3='/Users/marcel/Code/dominoj/dj-core/lib/dj_core'

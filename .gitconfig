@@ -36,7 +36,7 @@
   rom = rebase origin/master -s recursive -X theirs
 [core]
   editor = vim
-  excludesfile = /Users/marcel/.gitignore
+  excludesfile = ~/.gitignore
 [branch]
   autosetuprebase = always
 [branch "master"]

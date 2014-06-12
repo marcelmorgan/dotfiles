@@ -22,7 +22,11 @@
   m = merge
   mc = merge --no-ff --commit
   r = rebase
+  rc = rebase --continue
+  ra = rebase --abort
+  rs = rebase --skip
   p = push
+  pu = push --set-upstream origin
   pff = pull --ff-only
   f = fetch
   d = diff --color-words -w

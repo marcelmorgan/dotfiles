@@ -46,6 +46,6 @@
 [branch "master"]
   mergeoptions = --no-commit --ff-only
 [push]
-  default = tracking
+ default = upstream
 [help]
   format = web

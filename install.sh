@@ -7,7 +7,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 sudo mv /usr/bin/vim /usr/bin/vim-system
 
 # Base packages via vim
-brew install zsh tmux vim postgres rbenv ruby-build
+brew install zsh tmux vim postgres rbenv ruby-build nodejs phantomjs
 
 # install vimified
 

@@ -2,6 +2,7 @@ Bundle 'tomtom/tcomment_vim'
 
 set norelativenumber
 set nonu
+set eol
 
 " Some settings to enable the theme:
 "set number        " Show line numbers

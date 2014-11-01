@@ -83,6 +83,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 source $HOME/.zshrc.basic
+source $HOME/.zshrc.secret
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

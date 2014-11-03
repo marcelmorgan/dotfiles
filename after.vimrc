@@ -1,5 +1,3 @@
-Bundle 'tomtom/tcomment_vim'
-
 set norelativenumber
 set nonu
 set eol

@@ -49,3 +49,5 @@
  default = upstream
 [help]
   format = web
+[init]
+	templatedir = ~/.git-templates

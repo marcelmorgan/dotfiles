@@ -7,7 +7,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 sudo mv /usr/bin/vim /usr/bin/vim-system
 
 # Base packages via vim
-brew install zsh tmux vim ssh-copy-id postgres myqsql rbenv ruby-build nodejs the_silver_searcher qt
+brew install zsh tmux vim ssh-copy-id postgres mysql rbenv ruby-build nodejs the_silver_searcher qt
 
 npm install -g phantomjs
 

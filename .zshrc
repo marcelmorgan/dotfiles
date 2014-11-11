@@ -79,7 +79,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 source $HOME/.zshrc.basic

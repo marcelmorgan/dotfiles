@@ -1,12 +1,14 @@
 #!/usr/bin/env ruby
 
 branch_name = `git rev-parse --abbrev-ref HEAD`
+commit_file = ARGV.first
 
-if match = branch_name.match(/(^.*\d+)/i)
+first_line = File.open(commit_file, &:readline)
+
+if first_line.strip.empty? && (match = branch_name.match(/(^.*\d+)/i))
   # Assumes a ticket number ends in a number for e.g. #1, PROJECT_NAME-3
   commit_prefix = match.captures.first.upcase
 
-  commit_file = ARGV.first
   previous_commit_msg = File.read(commit_file)
 
   File.open(commit_file, 'w') do |f|

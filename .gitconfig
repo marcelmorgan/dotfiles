@@ -41,6 +41,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+  autocrlf = input
 [branch]
   autosetuprebase = always
 [branch "master"]
@@ -50,4 +51,4 @@
 [help]
   format = web
 [init]
-	templatedir = ~/.git-templates
+  templatedir = ~/.git-templates

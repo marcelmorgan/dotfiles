@@ -10,7 +10,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 sudo mv /usr/bin/vim /usr/bin/vim-system
 
 # Base packages via vim
-brew install git tmux vim ssh-copy-id postgres mysql rbenv ruby-build nodejs the_silver_searcher qt unrar
+brew install git tmux vim ssh-copy-id postgres mysql rbenv nodejs the_silver_searcher qt unrar
 
 npm install -g phantomjs
 

@@ -17,10 +17,8 @@
   a = add
   s = status
   c = commit -v
-  ca = commit -v --amend
   b = branch
   m = merge
-  mc = merge --no-ff --commit
   r = rebase
   rc = rebase --continue
   ra = rebase --abort
@@ -37,10 +35,9 @@
   rs = remote show
   ls = ls-files
   sl = shortlog -sn
-  rom = rebase origin/master -s recursive -X theirs
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/marcel/.gitignore
   autocrlf = input
 [branch]
   autosetuprebase = always
@@ -52,3 +49,6 @@
   format = web
 [init]
   templatedir = ~/.git-templates
+[user]
+	name = Marcel Morgan
+	email = 371739+mcmorgan@users.noreply.github.com

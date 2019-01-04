@@ -44,7 +44,7 @@
 [branch "master"]
   mergeoptions = --no-commit --ff-only
 [push]
- default = upstream
+	default = current
 [help]
   format = web
 [init]

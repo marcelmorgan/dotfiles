@@ -19,13 +19,20 @@
   c = commit -v
   b = branch
   m = merge
+  mc = merge --continue
+  ma = merge --abort
+  ms = merge --skip
   r = rebase
   rc = rebase --continue
   ra = rebase --abort
   rs = rebase --skip
+  cp = cherry-pick
+  cpc = cherry-pic --continue
+  cpa = cherry-pick --abort
   p = push
   pu = push --set-upstream origin
   pff = pull --ff-only
+  pr = pull --rebase
   f = fetch
   d = diff --color-words -w
   ds = diff --color-words -w --staged
@@ -37,7 +44,7 @@
   sl = shortlog -sn
 [core]
   editor = vim
-	excludesfile = /Users/marcel/.gitignore
+  excludesfile = /Users/marcel/.gitignore
   autocrlf = input
 [branch]
   autosetuprebase = always

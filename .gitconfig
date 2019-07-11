@@ -1,61 +1,61 @@
 [color]
-  ui = auto
+	ui = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow
-  frag = magenta
-  old = red bold
-  new = green
+	meta = yellow
+	frag = magenta
+	old = red bold
+	new = green
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [alias]
-  a = add
-  s = status
-  c = commit -v
-  b = branch
-  m = merge
-  mc = merge --continue
-  ma = merge --abort
-  ms = merge --skip
-  r = rebase
-  rc = rebase --continue
-  ra = rebase --abort
-  rs = rebase --skip
-  cp = cherry-pick
-  cpc = cherry-pic --continue
-  cpa = cherry-pick --abort
-  p = push
-  pu = push --set-upstream origin
-  pff = pull --ff-only
-  pr = pull --rebase
-  f = fetch
-  d = diff --color-words -w
-  ds = diff --color-words -w --staged
-  l = log -p
-  co = checkout
-  fix = commit --amend -C HEAD
-  rs = remote show
-  ls = ls-files
-  sl = shortlog -sn
+	a = add
+	s = status
+	c = commit -v
+	b = branch
+	m = merge
+	mc = merge --continue
+	ma = merge --abort
+	ms = merge --skip
+	r = rebase
+	rc = rebase --continue
+	ra = rebase --abort
+	rs = rebase --skip
+	cp = cherry-pick
+	cpc = cherry-pic --continue
+	cpa = cherry-pick --abort
+	p = push
+	pu = push --set-upstream origin
+	pff = pull --ff-only
+	pr = pull --rebase
+	f = fetch
+	d = diff --color-words -w
+	ds = diff --color-words -w --staged
+	l = log -p
+	co = checkout
+	fix = commit --amend -C HEAD
+	rs = remote show
+	ls = ls-files
+	sl = shortlog -sn
 [core]
-  editor = vim
-  excludesfile = /Users/marcel/.gitignore
-  autocrlf = input
+	editor = vim
+	excludesfile = /Users/marcel/.gitignore
+	autocrlf = input
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [branch "master"]
-  mergeoptions = --no-commit --ff-only
+	mergeoptions = --no-commit --ff-only
 [push]
 	default = current
 [help]
-  format = web
+	format = web
 [init]
-  templatedir = ~/.git-templates
+	templatedir = ~/.git-templates
 [user]
 	name = Marcel Morgan
 	email = 371739+mcmorgan@users.noreply.github.com

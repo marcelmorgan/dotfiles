@@ -42,7 +42,7 @@
 	rs = remote show
 	ls = ls-files
 	sl = shortlog -sn
-	prune = !sh -c 'git branch | grep -v "master" | xargs git branch -D'
+	prune-branches = !sh -c 'git branch | grep -v master | xargs git branch -D'
 [core]
 	editor = vim
 	excludesfile = /Users/marcel/.gitignore

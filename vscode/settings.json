@@ -1,0 +1,14 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "html.format.endWithNewline": true,
+    "files.insertFinalNewline": true,
+}

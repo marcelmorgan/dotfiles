@@ -11,4 +11,10 @@
     "eslint.autoFixOnSave": true,
     "html.format.endWithNewline": true,
     "files.insertFinalNewline": true,
+    "elm.compiler": "./node_modules/elm/bin/elm",
+    "elm.makeCommand": "./node_modules/elm/bin/elm make",
+    "elm.formatCommand": "./node_modules/elm-format/bin/elm-format",
+    "[elm]": {
+        "editor.formatOnSave": true
+    }
 }

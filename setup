@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Linking fish config.."
+ln -sf fish/config.fish ~/.config/fish/
+echo "...done"

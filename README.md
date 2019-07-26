@@ -1,5 +1,13 @@
 # Dot Files
 
+## Installation
+
+Will force symlink config files. Use with care...
+
+```
+./setup
+```
+
 ## Git
 
 I have excluded my name and email from this config. I recommend that you add
@@ -21,9 +29,5 @@ git config --global init.templatedir '~/.git-templates'
 Do `git init` to copy in existing repos
 
 
-## Vim
-
-Install [vimified](https://github.com/zaiste/vimified), then link `*.vimrc`
-files to `.vim` folder.
 
 

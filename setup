@@ -1,5 +1,14 @@
 #!/bin/sh
 
-echo "Linking fish config.."
-ln -sf fish/config.fish ~/.config/fish/
+echo "Linking fish config..."
+ln -sf $PWD/fish/config.fish ~/.config/fish/
+echo "...done"
+
+echo "Linking git configs..."
+ln -sf $PWD/git/.gitconfig ~/
+ln -sf $PWD/git/.gitignore ~/
+echo "...done"
+
+echo "Linking vscode config..."
+ln -sf $PWD/vscode/settings.json ~/Library/Application\ Support/Code/User/
 echo "...done"

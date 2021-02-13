@@ -55,6 +55,7 @@
 	format = web
 [init]
 	templatedir = ~/.git-templates
+	defaultBranch = main
 [user]
 	name = Marcel Morgan
 	email = 371739+mcmorgan@users.noreply.github.com

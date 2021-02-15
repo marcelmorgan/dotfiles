@@ -1,5 +1,4 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "window.zoomLevel": 0,
@@ -7,14 +6,13 @@
     "ruby.codeCompletion": "rcodetools",
     "ruby.format": "rubocop",
     "ruby.intellisense": "rubyLocate",
-    "eslint.alwaysShowStatus": true,
-    "eslint.autoFixOnSave": true,
     "html.format.endWithNewline": true,
     "files.insertFinalNewline": true,
-    "elm.compiler": "./node_modules/elm/bin/elm",
-    "elm.makeCommand": "./node_modules/elm/bin/elm make",
-    "elm.formatCommand": "./node_modules/elm-format/bin/elm-format",
     "[elm]": {
         "editor.formatOnSave": true
-    }
+    },
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "elmLS.elmFormatPath": "/usr/local/bin/elm-format",
+    "elmLS.elmPath": "/usr/local/bin/elm",
+    "elmLS.elmTestPath": "/usr/local/bin/elm-test",
 }

@@ -6,3 +6,5 @@ alias h=heroku
 alias r=rails
 alias t=tmux
 alias v=vim
+
+starship init fish | source

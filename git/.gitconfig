@@ -1,3 +1,12 @@
+[credential "https://github.com"]
+        helper =
+        helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+        helper =
+        helper = !/usr/bin/gh auth git-credential
+[user]
+        email = marcelmorgan@users.noreply.github.com
+        name = Marcel Morgan
 [color]
 	ui = auto
 [color "branch"]
@@ -56,6 +65,3 @@
 [init]
 	templatedir = ~/.git-templates
 	defaultBranch = main
-[user]
-	name = Marcel Morgan
-	email = 371739+mcmorgan@users.noreply.github.com

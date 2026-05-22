@@ -1,0 +1,5 @@
+l=ls -lah
+g=git
+u=sudo apt update && sudo apt upgrade -y
+c=claude
+

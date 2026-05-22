@@ -1,17 +1,67 @@
-#!/bin/sh
-
-brew install starship
-
-echo "Linking fish config..."
-ln -sf $PWD/fish/config.fish ~/.config/fish/
-echo "...done"
+#!/bin/bash
 
 echo "Linking git configs..."
 ln -sf $PWD/git/.gitconfig ~/
 ln -sf $PWD/git/.gitignore ~/
 echo "...done"
 
-echo "Linking vscode config..."
-ln -sf $PWD/vscode/settings.json ~/Library/Application\ Support/Code/User/
-echo "...done"
+
+# 1. Force Bash to allow aliases inside this script environment
+if [ -n "$BASH_VERSION" ]; then
+    shopt -s expand_aliases
+    export PS1='$ ' # Tricks .bashrc into bypassing its non-interactive guard
+fi
+
+DATA_FILE="aliases.txt"
+
+# Verify the data file exists
+if [ ! -f "$DATA_FILE" ]; then
+    echo "Error: $DATA_FILE not found!"
+    return 1 2>/dev/null || exit 1
+fi
+
+# Detect the active shell
+USER_SHELL=$(basename "$SHELL")
+
+case "$USER_SHELL" in
+    bash) TARGET_FILE="$HOME/.bashrc" ;;
+    zsh)  TARGET_FILE="$HOME/.zshrc" ;;
+    fish) TARGET_FILE="$HOME/.config/fish/config.fish"; mkdir -p "$(dirname "$TARGET_FILE")" ;;
+    *) echo "Unsupported shell: $USER_SHELL"; return 1 2>/dev/null || exit 1 ;;
+esac
+
+echo "Reading shortcuts from $DATA_FILE and updating $TARGET_FILE..."
+
+# Read file line by line
+while IFS='=' read -r NAME CMD || [ -n "$NAME" ]; do
+    [[ -z "$NAME" || "$NAME" =~ ^[[:space:]]*# ]] && continue
+    
+    NAME=$(echo "$NAME" | xargs)
+    CMD=$(echo "$CMD" | xargs)
+
+    if [ "$USER_SHELL" = "fish" ]; then
+        LINE_TO_ADD="alias $NAME '$CMD'"
+    else
+        LINE_TO_ADD="alias $NAME='$CMD'"
+    fi
+
+    if grep -qF "$LINE_TO_ADD" "$TARGET_FILE" 2>/dev/null; then
+        echo "  [Skipped] '$NAME' already exists."
+    else
+        echo "$LINE_TO_ADD" >> "$TARGET_FILE"
+        echo "  [Added] '$NAME'."
+    fi
+done < "$DATA_FILE"
+
+# 2. Instant reload logic tailored to shell behavior
+echo "Reloading environment..."
+if [ "$USER_SHELL" = "fish" ]; then
+    source "$TARGET_FILE"
+else
+    # Sourcing directly into the active layer
+    . "$TARGET_FILE"
+fi
+
+echo "All aliases from $DATA_FILE are now live!"
+
     

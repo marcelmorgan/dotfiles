@@ -10,6 +10,10 @@ mkdir -p ~/.claude
 ln -sf $PWD/CLAUDE.md ~/.claude/CLAUDE.md
 echo "...done"
 
+echo "Linking tmux config..."
+ln -sf $PWD/tmux/.tmux.conf ~/
+echo "...done"
+
 
 # 1. Force Bash to allow aliases inside this script environment
 if [ -n "$BASH_VERSION" ]; then
